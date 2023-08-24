@@ -30,7 +30,7 @@
     }
     .surprise {
       position: absolute;
-      display: none;
+      opacity: 0;
       cursor: pointer;
       bottom: 0;
       z-index: 1;
@@ -48,10 +48,12 @@
       width: 22.15vw;
     }
     .grid div:hover .surprise {
-      display: block;
+      opacity: 1;
+      transition: opacity 1s ease;
     }
     .grid div:hover .surprise + img:not(.fiona) {
-      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
     }
     .grid div img:last-of-type {
       width: 100%;
