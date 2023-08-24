@@ -16,8 +16,42 @@
       grid-template-columns: 15vw 16vw 15vw 15vw 15vw 15vw;
       align-items: end;
     }
+    .grid div {
+      position: relative;
+    }
     .grid img:first-of-type {
       align-self: start;
+    }
+    .surprise {
+      position: absolute;
+      display: none;
+      cursor: pointer;
+      bottom: 0;
+      z-index: 1;
+    }
+    .drumkit {
+      width: 25vw;
+      left: -5.2vw;
+    }
+    .alyssa-dj {
+      left: -2.7vw;
+      width: 20.2vw;
+    }
+    .keely-coding-wizard {
+      left: -3.54vw;
+      width: 22.15vw;
+    }
+    .grid div:hover .surprise {
+      display: block;
+    }
+    .grid div:hover .surprise + img:not(.fiona) {
+      display: none;
+    }
+    .grid div img:last-of-type {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
     }
   </style>
 </head>
@@ -25,9 +59,18 @@
 <div class="grid">
   <img src="toucan-sam.svg" alt ="Toucan Sam" />
   <img src="andrei.svg" alt ="Andrei" />
-  <img src="fiona.svg" alt ="Fiona" />
-  <img src="alyssa.svg" alt ="Alyssa" />
-  <img src="keely.svg" alt ="Keely" />
+  <div>
+    <img class="surprise drumkit" src="drumkit.svg" alt="drum kit" />
+    <img class="fiona" src="fiona.svg" alt ="Fiona" />
+  </div>
+  <div>
+    <img class="surprise alyssa-dj" src="alyssa-dj.svg" alt="DJ Alyssa" />
+    <img src="alyssa.svg" alt ="Alyssa" />
+  </div>
+  <div>
+    <img class="surprise keely-coding-wizard" src="keely-coding-wizard.svg" alt="Keely" />
+    <img src="keely.svg" alt ="Keely" />
+  </div>
   <img src="sue.svg" alt ="Sue" />
 </div>
 </body>
