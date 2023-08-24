@@ -6,15 +6,21 @@
   <title>Toucan Sam</title>
   <link href="favicon-32x32.png" rel="icon">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      height: 100%;
+      height: 90vh;
       background-color: azure;
       padding: 5vw;
+      display: grid;
+      align-items: center;
     }
     .grid {
       display: grid;
       grid-template-columns: 15vw 16vw 15vw 15vw 15vw 15vw;
       align-items: end;
+      height: 50vw;
     }
     .grid div {
       position: relative;
@@ -58,7 +64,9 @@
 <body>
 <div class="grid">
   <img src="toucan-sam.svg" alt ="Toucan Sam" />
-  <img src="andrei.svg" alt ="Andrei" />
+  <div>
+    <img src="andrei.svg" alt ="Andrei" />
+  </div>
   <div>
     <img class="surprise drumkit" src="drumkit.svg" alt="drum kit" />
     <img class="fiona" src="fiona.svg" alt ="Fiona" />
@@ -71,7 +79,9 @@
     <img class="surprise keely-coding-wizard" src="keely-coding-wizard.svg" alt="Keely" />
     <img src="keely.svg" alt ="Keely" />
   </div>
-  <img src="sue.svg" alt ="Sue" />
+  <div>
+    <img src="sue.svg" alt ="Sue" />
+  </div>
 </div>
 </body>
 </html>
