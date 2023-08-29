@@ -5,85 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Toucan Sam</title>
   <link href="favicon-32x32.png" rel="icon">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      height: 90vh;
-      background-color: azure;
-      padding: 5vw;
-      display: grid;
-      align-items: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: 15vw 16vw 15vw 15vw 15vw 15vw;
-      align-items: end;
-      height: 50vw;
-    }
-    .grid div {
-      position: relative;
-    }
-    .grid img:first-of-type {
-      align-self: start;
-    }
-    .surprise {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      bottom: 0;
-      z-index: 1;
-    }
-    .drumkit {
-      width: 25vw;
-      left: -5.2vw;
-    }
-    .alyssa-dj {
-      left: -2.7vw;
-      width: 20.2vw;
-    }
-    .keely-coding-wizard {
-      left: -3.54vw;
-      width: 22.15vw;
-    }
-    .grid div:hover .surprise {
-      opacity: 1;
-      transition: opacity 1s ease;
-    }
-    .grid div:hover .surprise + img:not(.fiona) {
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-    .grid div img:last-of-type {
-      width: 100%;
-      height: auto;
-      position: absolute;
-      bottom: 0;
-    }
-  </style>
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
 <div class="grid">
-  <img src="toucan-sam.svg" alt ="Toucan Sam" />
-  <div>
-    <img src="andrei.svg" alt ="Andrei" />
+  <img class="toucan-sam" src="toucan-sam.svg" alt ="Toucan Sam" />
+  <div class="fruit">
+    <img class="surprise andrei-guitar" src="andrei-guitar.svg" alt="Andrei guitar" />
+    <img class="andrei" src="andrei.svg" alt ="Andrei" />
   </div>
-  <div>
-    <img class="surprise drumkit" src="drumkit.svg" alt="drum kit" />
-    <img class="fiona" src="fiona.svg" alt ="Fiona" />
+  <div class="fruit">
+    <img class="surprise keely-keyboard" src="keely-keyboard.svg" alt="Keely" />
+    <img src="keely.svg" alt ="Keely" />
   </div>
-  <div>
+  <div class="fruit">
     <img class="surprise alyssa-dj" src="alyssa-dj.svg" alt="DJ Alyssa" />
     <img src="alyssa.svg" alt ="Alyssa" />
   </div>
-  <div>
-    <img class="surprise keely-coding-wizard" src="keely-coding-wizard.svg" alt="Keely" />
-    <img src="keely.svg" alt ="Keely" />
+  <div class="fruit">
+    <img class="surprise sue-flute" src="sue-flute.svg" alt="Sue flute" />
+    <img class="sue" src="sue.svg" alt="Sue" />
   </div>
-  <div>
-    <img src="sue.svg" alt ="Sue" />
+  <div class="fruit">
+    <img class="surprise fiona-drumkit" src="fiona-drumkit.svg" alt="Fiona drumkit" />
+    <img class="fiona" src="fiona.svg" alt ="Fiona" />
   </div>
 </div>
+<script>
+  const gridDivs = document.querySelectorAll(".grid > div");
+
+  gridDivs.forEach((div, i) => {
+    div.querySelectorAll("img").forEach(img => img.style.setProperty("--anim", i));
+
+    setInterval(() => {
+      div.classList.contains("animated") ? div.classList.remove("animated") : div.classList.add("animated");
+      }, 7000);
+  })
+</script>
 </body>
 </html>

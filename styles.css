@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  font-size: 1.1vw;
+}
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: azure;
+  display: grid;
+  align-items: center;
+}
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: end;
+  justify-content: center;
+  height: 33rem;
+}
+.grid .fruit {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+.grid .fruit img {
+  opacity: 1;
+  display: block;
+  height: 33rem;
+  transition-property: opacity;
+  transition-delay: calc(var(--anim) * 1s);
+  transition-duration: 1s;
+  transition-timing-function: ease;
+}
+.toucan-sam {
+  align-self: start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  height: 30%;
+  width: 5rem;
+}
+.grid .fruit .surprise {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: auto;
+  opacity: 0;
+}
+.grid .fruit .andrei,
+.grid .fruit .andrei-guitar {
+  height: 35rem;
+}
+.andrei-guitar {
+  left: 0.64rem;
+}
+.fiona-drumkit {
+  left: -4.42rem;
+}
+.alyssa-dj {
+  left: -1.83rem;
+}
+.keely-keyboard {
+  left: -2.4rem;
+}
+.sue-flute,
+.sue {
+  left: -4.85rem;
+}
+
+.grid .animated .surprise {
+  opacity: 1;
+}
+.grid .animated .surprise + img {
+  opacity: 0;
+}
